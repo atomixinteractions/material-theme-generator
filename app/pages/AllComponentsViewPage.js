@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TextField from 'material-ui/TextField'
-import {Tabs, Tab} from 'material-ui/Tabs'
+import { Tabs, Tab } from 'material-ui/Tabs'
 import Slider from 'material-ui/Slider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
-class AllComponentsViewPage extends React.Component {
+export default class AllComponentsViewPage extends Component {
   render () {
     return (
       <div>
         <TextField
-          floatingLabelText={'Floating Label Text'}
+          floatingLabelText="Floating Label Text"
           value="TextField without error"
         />
         <TextField
-          floatingLabelText={'TextField wit error and empty value'}
-          hintText={'Hing text'}
-          errorText={'Error text'}
+          floatingLabelText="TextField wit error and empty value"
+          hintText="Hing text"
+          errorText="Error text"
         />
 
         <Tabs>
@@ -40,10 +40,7 @@ class AllComponentsViewPage extends React.Component {
               </p>
             </div>
           </Tab>
-          <Tab
-            label="onActive"
-            data-route="/home"
-          >
+          <Tab label="onActive" data-route="/home">
             <div>
               <h2>Tab Three</h2>
               <p>
@@ -56,5 +53,3 @@ class AllComponentsViewPage extends React.Component {
     )
   }
 }
-
-export default AllComponentsViewPage
