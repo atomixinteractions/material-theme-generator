@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "globals": {
+    "callback": true,
+    "confirm": true
+  },
+  "rules": {
+    "semi":"off",
+    "no-alert": 0,
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }]
+  }
+}
