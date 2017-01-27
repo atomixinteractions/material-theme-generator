@@ -1,20 +1,17 @@
 import React from 'react'
 import { Router, Route } from 'react-router'
-import { ThemeProvider } from 'styled-components'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 
-const DummyPage = () => (
-  <div>
-    Dummy page
-  </div>
-)
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Theme from './styles/Theme'
+import AllComponentsViewPage from './pages/AllComponentsViewPage'
 
 const App = () => (
-  <ThemeProvider theme={{}}>
+  <MuiThemeProvider muiTheme={Theme}>
     <Router history={createBrowserHistory()}>
-      <Route path="/" component={DummyPage} />
+      <Route path="/" component={AllComponentsViewPage} />
     </Router>
-  </ThemeProvider>
+  </MuiThemeProvider>
 )
 
 export default App
