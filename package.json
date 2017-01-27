@@ -1,0 +1,17 @@
+{
+  "name": "material-theme-generator",
+  "version": "0.1.0",
+  "description": "Generator of material themes on React",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomixinteractions/material-theme-generator.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomixinteractions/material-theme-generator/issues"
+  },
+  "homepage": "https://github.com/atomixinteractions/material-theme-generator#readme"
+}
