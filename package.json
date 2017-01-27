@@ -2,6 +2,7 @@
   "name": "material-theme-generator",
   "version": "0.1.0",
   "description": "Generator of material themes on React",
+  "keywords": "flexible, material, theme generator",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
