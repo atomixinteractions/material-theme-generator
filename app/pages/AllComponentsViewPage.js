@@ -116,7 +116,7 @@ class AllComponentsViewPage extends Component {
 
           <Paper style={blockStyle}>
             <Slider style={elementStyle} />
-            <Toggle label={}/>
+            <Toggle label={'Toggle'}/>
           </Paper>
         </div>
       </MuiThemeProvider>
