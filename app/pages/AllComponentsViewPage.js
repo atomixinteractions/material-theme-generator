@@ -36,11 +36,10 @@ class AllComponentsViewPage extends Component {
   }
 
   changeTheme(newThemeTitle) {
-    const self = this;
     this.setState({
       theme: newThemeTitle
     }, () => {
-      self.props.changeTheme(newThemeTitle)
+      this.props.changeTheme(newThemeTitle)
     })
   }
 
