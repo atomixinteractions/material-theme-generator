@@ -68,6 +68,7 @@ class AllComponentsViewPage extends Component {
           <Tabs value={this.state.theme} onChange={this.changeTheme}>
             <Tab label="Light Base Theme" value={'lightBaseTheme'}/>
             <Tab label="Dark Base Theme" value={'darkBaseTheme'}/>
+            <Tab label="Dark Base Theme" value={'razzwanTheme'}/>
           </Tabs>
 
           <Paper style={blockStyle}>
