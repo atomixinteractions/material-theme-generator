@@ -28,13 +28,14 @@ const ColorWrapper = styled.div`
   `}
 `
 
-const Color = ({ color, onClick, active }) => (
+const Color = ({ color, onClick, active, children }) => (
   <ColorWrapper color={color} onClick={onClick} active={active}>
-    {color}
+    {children || color}
   </ColorWrapper>
 )
 
 Color.propTypes = {
+  children: PropTypes.string,
   color: PropTypes.string,
   onClick: PropTypes.func,
   active: PropTypes.bool,

@@ -1,18 +1,20 @@
 import React from 'react'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import PreviewMUI from './components/pages/PreviewMUI'
-import theme from './reducers/theme'
+import themeReducer from './reducers/theme'
+import setupReducer from './reducers/setup'
 
 
 const store = createStore(
   combineReducers({
     routing: routerReducer,
-    theme
+    theme: themeReducer,
+    setup: setupReducer,
   }),
   applyMiddleware(thunk)
 );
