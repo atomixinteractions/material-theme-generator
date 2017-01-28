@@ -19,12 +19,12 @@ const ColorWrapper = styled.div`
 
   &:hover {
     box-shadow: 0 3px 10px rgba(0,0,0,.23), 0 3px 10px rgba(0,0,0,.16);
-    transform: scale(.9);
+    transform: scale(1.025);
   }
 
   ${props => props.active && css`
     box-shadow: 0 3px 10px rgba(0,0,0,.23), 0 3px 10px rgba(0,0,0,.16);
-    transform: scale(.9);
+    transform: scale(1.025);
   `}
 `
 
