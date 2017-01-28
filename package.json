@@ -2,7 +2,7 @@
   "name": "material-theme-generator",
   "version": "0.1.0",
   "description": "Generator of material themes on React",
-  "keywords": "flexible, material, theme generator",
+  "keywords": ["flexible", "material", "theme generator"],
   "scripts": {
     "start": "node ./server",
     "build": "cross-env NODE_ENV=production webpack -p"
