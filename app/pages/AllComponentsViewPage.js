@@ -25,11 +25,13 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 class AllComponentsViewPage extends Component {
+  changeTheme = this.changeTheme.bind(this)
+  getMainColorByThemeName = this.getMainColorByThemeName.bind(this)
+
   state = {
     theme: 'lightBaseTheme'
   }
 
-  changeTheme = this.changeTheme.bind(this)
   changeTheme(newThemeTitle) {
     this.setState({
       theme: newThemeTitle
@@ -38,7 +40,6 @@ class AllComponentsViewPage extends Component {
     })
   }
 
-  getMainColorByThemeName = this.getMainColorByThemeName.bind(this)
   getMainColorByThemeName() {
     switch (this.state.theme) {
       case 'lightBaseTheme':
