@@ -126,10 +126,8 @@ class AllComponentsViewPage extends Component {
 
 export default connect(state => ({
   theme: state.theme,
-}), dispatch => {
-  return {
-    changeTheme: (newThemeTitle) => {
-      dispatch({type: 'REPLACE_CURRENT_THEME', theme: require('../themes/' + newThemeTitle).default})
-    }
+}), dispatch => ({
+  changeTheme: (newThemeTitle) => {
+    dispatch({type: 'REPLACE_CURRENT_THEME', theme: require('../themes/' + newThemeTitle).default})
   }
-})(AllComponentsViewPage)
+}))(AllComponentsViewPage)
