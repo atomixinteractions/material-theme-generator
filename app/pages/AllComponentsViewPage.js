@@ -29,12 +29,7 @@ class AllComponentsViewPage extends Component {
     theme: 'lightBaseTheme'
   }
 
-  constructor(props) {
-    super(props)
-    this.changeTheme = this.changeTheme.bind(this)
-    this.getMainColorByThemeName = this.getMainColorByThemeName.bind(this)
-  }
-
+  changeTheme = this.changeTheme.bind(this)
   changeTheme(newThemeTitle) {
     this.setState({
       theme: newThemeTitle
@@ -43,6 +38,7 @@ class AllComponentsViewPage extends Component {
     })
   }
 
+  getMainColorByThemeName = this.getMainColorByThemeName.bind(this)
   getMainColorByThemeName() {
     switch (this.state.theme) {
       case 'lightBaseTheme':
