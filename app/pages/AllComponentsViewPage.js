@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {
   Checkbox,
   DatePicker,
