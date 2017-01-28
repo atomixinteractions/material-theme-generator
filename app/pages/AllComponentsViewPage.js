@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import lightBaseTheme from '../themes/lightBaseTheme'
 import {
   Checkbox,
   DatePicker,
@@ -57,7 +56,6 @@ class AllComponentsViewPage extends Component {
   }
 
   render () {
-    console.log(this.props.theme)
     const blockStyle = {
       margin: '15px'
     }
