@@ -7,4 +7,4 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 
-export default getMuiTheme(lightBaseTheme);
+export default getMuiTheme(lightBaseTheme)

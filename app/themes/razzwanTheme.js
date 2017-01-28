@@ -1,10 +1,5 @@
-/**
- * Created by altiore on 28.01.17.
- */
-
-'use strict';
-
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+
 
 export default getMuiTheme({
   palette: {
@@ -22,6 +17,6 @@ export default getMuiTheme({
     // disabledColor: (0, _colorManipulator.fade)(_colors.darkBlack, 0.3),
     // pickerHeaderColor: _colors.cyan500,
     // clockCircleColor: (0, _colorManipulator.fade)(_colors.darkBlack, 0.07),
-    // shadowColor: _colors.fullBlack
-  }
-});
+    // shadowColor: _colors.fullBlack,
+  },
+})
