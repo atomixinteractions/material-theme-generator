@@ -1,17 +1,32 @@
 import React from 'react'
-import { Router, Route } from 'react-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import thunk from 'redux-thunk'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Theme from './styles/Theme'
-import AllComponentsViewPage from './pages/AllComponentsViewPage'
+import PreviewMUI from './components/pages/PreviewMUI'
+import themeReducer from './reducers/theme'
+import setupReducer from './reducers/setup'
 
+
+const store = createStore(
+  combineReducers({
+    routing: routerReducer,
+    theme: themeReducer,
+    setup: setupReducer,
+  }),
+  applyMiddleware(thunk)
+);
+
+const history = syncHistoryWithStore(browserHistory, store)
+console.log('=', PreviewMUI)
 const App = () => (
-  <MuiThemeProvider muiTheme={Theme}>
-    <Router history={createBrowserHistory()}>
-      <Route path="/" component={AllComponentsViewPage} />
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={PreviewMUI} />
     </Router>
-  </MuiThemeProvider>
+  </Provider>
 )
 
 export default App
