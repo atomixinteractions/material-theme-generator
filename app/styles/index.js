@@ -1,5 +1,5 @@
 import { injectGlobal } from 'styled-components'
-import normalize from 'normalize-styled'
+import normalize from 'styled-normalize'
 import material from 'google-material-color'
 
 
