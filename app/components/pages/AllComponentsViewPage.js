@@ -124,7 +124,7 @@ export default connect(
   }),
   dispatch => ({
     changeTheme: (newThemeTitle) => {
-      dispatch({ type: 'REPLACE_CURRENT_THEME', theme: require(`../themes/${newThemeTitle}`).default })
+      dispatch({ type: 'REPLACE_CURRENT_THEME', theme: require(`../../themes/${newThemeTitle}`).default })
     }
   })
 )(AllComponentsViewPage)
