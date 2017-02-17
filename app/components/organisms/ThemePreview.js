@@ -1,10 +1,9 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
+import withWidth, { SMALL } from 'material-ui/utils/withWidth';
 import muiThemeable from 'material-ui/styles/muiThemeable';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import withWidth, {SMALL} from 'material-ui/utils/withWidth';
 import typography from 'material-ui/styles/typography';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import ClearFix from 'material-ui/internal/ClearFix';
+
 
 import {
   Checkbox,
@@ -107,16 +106,16 @@ class ThemesPage extends Component {
         borderBottom: `1px solid ${borderColor}`,
         paddingBottom: '10px',
       },
-    };
+    }
 
-    styles.containerCentered = Object.assign({}, styles.container, styles.containerCentered);
-    styles.groupSlider = Object.assign({}, styles.group, styles.groupSlider);
+    styles.containerCentered = { ...styles.container, ...styles.containerCentered }
+    styles.groupSlider = { ...styles.group, ...styles.groupSlider }
 
     return styles;
   }
 
   getComponentGroup() {
-    const styles = this.getStyles();
+    const styles = this.getStyles()
 
     return (
       <ClearFix>
@@ -192,23 +191,23 @@ class ThemesPage extends Component {
             <DatePicker
               hintText="Landscape Dialog"
               mode="landscape"
-              style={{width: '100%'}}
-              textFieldStyle={{width: '100%'}}
+              style={{ width: '100%' }}
+              textFieldStyle={{ width: '100%' }}
             />
           </div>
-          <div style={Object.assign({}, styles.container, {width: '100%'})}>
+          <div style={{ ...styles.container, width: '100%' }}>
             <DropDownMenu
               value={3}
-              style={{width: '100%'}}
-              labelStyle={{paddingLeft: 0, paddingRight: 0}}
-              underlineStyle={{margin: '-1px 0'}}
-              iconStyle={{paddingLeft: 0, right: -16}}
+              style={{ width: '100%' }}
+              labelStyle={{ paddingLeft: 0, paddingRight: 0 }}
+              underlineStyle={{ margin: '-1px 0' }}
+              iconStyle={{ paddingLeft: 0, right: -16 }}
             >
-              <MenuItem value={1} primaryText={'Never'} />
-              <MenuItem value={2} primaryText={'Every Night'} />
-              <MenuItem value={3} primaryText={'Weeknights'} />
-              <MenuItem value={4} primaryText={'Weekends'} />
-              <MenuItem value={5} primaryText={'Weekly'} />
+              <MenuItem value={1} primaryText="Never" />
+              <MenuItem value={2} primaryText="Every Night" />
+              <MenuItem value={3} primaryText="Weeknights" />
+              <MenuItem value={4} primaryText="Weekends" />
+              <MenuItem value={5} primaryText="Weekly" />
             </DropDownMenu>
           </div>
         </div>
@@ -274,47 +273,6 @@ class ThemesPage extends Component {
     );
   }
 
-  handleChangeTabs = (valueTabs) => {
-    let newMuiTheme = null;
-
-    if (valueTabs === 'light') {
-      newMuiTheme = getMuiTheme();
-    } else {
-      newMuiTheme = getMuiTheme(darkBaseTheme);
-    }
-
-    newMuiTheme.name = valueTabs;
-
-    this.setState({
-      valueTabs: valueTabs,
-    });
-
-    // console.log(newMuiTheme);
-
-    this.props.onChangeMuiTheme(newMuiTheme);
-  };
-
-  getThemeExamples() {
-    return (
-      <div>
-        <Tabs
-          value={this.state.valueTabs}
-          onChange={this.handleChangeTabs}
-        >
-          <Tab
-            label="Light Theme (Default)"
-            value="light"
-          />
-          <Tab
-            label="Dark Theme"
-            value="dark"
-          />
-        </Tabs>
-        {this.getComponentGroup()}
-      </div>
-    );
-  }
-
   handleTouchTapDrawer = () => {
     this.setState({
       drawerOpen: true,
@@ -353,11 +311,12 @@ class ThemesPage extends Component {
 
   render() {
     const styles = this.getStyles();
-    // console.log(this.props);
 
     return (
       <Paper style={styles.liveExamplePaper}>
-        <ClearFix style={styles.liveExampleBlock}>{this.getThemeExamples()}</ClearFix>
+        <ClearFix style={styles.liveExampleBlock}>
+          {this.getComponentGroup()}
+        </ClearFix>
       </Paper>
     );
   }

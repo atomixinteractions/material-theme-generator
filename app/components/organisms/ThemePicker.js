@@ -13,11 +13,12 @@ const PickerWrapper = styled(Column)`
   align-content: stretch;
   justify-content: space-between;
 `
+PickerWrapper.displayName = 'PickerWrapper'
 
 const RowWrapper = styled(Row)`
   flex-grow: 1;
 `
-
+RowWrapper.displayName = 'RowWrapper'
 
 const ThemePicker = (props) => (
   <PickerWrapper>

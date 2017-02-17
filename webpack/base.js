@@ -21,6 +21,7 @@ module.exports = {
     alias: {
     },
     modules: [
+      'app',
       'node_modules',
     ],
   },

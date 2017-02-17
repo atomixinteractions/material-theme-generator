@@ -1,18 +1,24 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Router, Route } from 'react-router'
+import { ThemeProvider } from 'styled-components'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
+import createHashHistory from 'history/lib/createHashHistory'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiGeneratorPage from './components/pages/MuiGenerator'
+import NotFoundPage from './components/pages/NotFound'
 
-import AllComponentsViewPage from './pages/AllComponentsViewPage'
-import ThemePreview from './pages/ThemePreview'
+import { Theme } from './styles'
 
-import Theme from './styles/Theme'
+// TODO: delete
+
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+// import getMuiTheme from 'material-ui/styles/getMuiTheme';
+// import AllComponentsViewPage from './pages/AllComponentsViewPage'
+// import ThemePreview from './pages/ThemePreview'
+// import MuiTheme from './styles/Theme'
 
 
 class App extends Component {
-
   static childContextTypes = {
     muiTheme: PropTypes.object,
   };
@@ -23,14 +29,14 @@ class App extends Component {
     };
   }
 
-  handleChangeMuiTheme(muiTheme) {
+  handleChangeMuiTheme = (muiTheme) => {
     this.setState({
       muiTheme: getMuiTheme(muiTheme),
     });
   };
 
   componentWillMount() {
-    this.handleChangeMuiTheme(Theme)
+    this.handleChangeMuiTheme(MuiTheme)
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
@@ -43,12 +49,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={this.state.muiTheme}>
         <Router history={createBrowserHistory()}>
-          <Route
-            path="/"
-            component={() => (
-              <ThemePreview onChangeMuiTheme={this.handleChangeMuiTheme.bind(this)}/>
-            )}
-          />
+          <Route path="/" component={() => <ThemePreview onChangeMuiTheme={this.handleChangeMuiTheme} />} />
           {/* <Route path="/" exactly component={AllComponentsViewPage} /> */}
         </Router>
       </MuiThemeProvider>
@@ -56,4 +57,14 @@ class App extends Component {
   }
 }
 
-export default App
+const Root = () => (
+  <ThemeProvider theme={Theme}>
+    <Router history={createHashHistory()}>
+      <Route path="/" component={MuiGeneratorPage} />
+
+      <Route path="*" component={NotFoundPage} />
+    </Router>
+  </ThemeProvider>
+)
+
+export default Root

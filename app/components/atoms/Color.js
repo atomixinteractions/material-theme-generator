@@ -15,7 +15,8 @@ const ColorWrapper = styled.div`
   align-items: center;
   cursor: pointer;
   margin: 0;
-  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  ${''/* box-shadow: 0 2px 3px rgba(0,0,0,.1); */}
+  box-shadow: 0 0 0 rgba(0,0,0,0);
 
   &:hover {
     box-shadow: 0 3px 10px rgba(0,0,0,.23), 0 3px 10px rgba(0,0,0,.16);
