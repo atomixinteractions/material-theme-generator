@@ -121,7 +121,7 @@ class ThemesPage extends Component {
       <ClearFix>
         <div style={styles.group}>
           <div style={styles.containerCentered}>
-            <FloatingActionButton iconClassName="muidocs-icon-action-grade" disabled={true} />
+            <FloatingActionButton iconClassName="muidocs-icon-action-grade" disabled />
           </div>
           <div style={styles.containerCentered}>
             <RaisedButton label="Secondary" secondary={true} />

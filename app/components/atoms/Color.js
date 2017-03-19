@@ -6,16 +6,15 @@ import material from 'google-material-color'
 const ColorWrapper = styled.div`
   display: flex;
   flex-grow: 1;
-  width: 20%;
   flex-shrink: 0;
-  background-color: ${props => material.get(props.color || 'Blue Grey', 500)};
-  color: ${props => material.getText(props.color || 'Blue Grey')};
+  background-color: ${props => material.get((props.color || 'Blue Grey'), props.hue || 500)};
+  color: ${props => material.getText((props.color || 'Blue Grey'), props.hue || '500')};
   transition: all .3s;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   margin: 0;
-  ${''/* box-shadow: 0 2px 3px rgba(0,0,0,.1); */}
+  padding: 1rem;
   box-shadow: 0 0 0 rgba(0,0,0,0);
 
   &:hover {
@@ -28,18 +27,22 @@ const ColorWrapper = styled.div`
     transform: scale(1.025);
   `}
 `
+ColorWrapper.displayName = 'ColorWrapper'
 
-const Color = ({ color, onClick, active, children }) => (
-  <ColorWrapper color={color} onClick={onClick} active={active}>
-    {children || color}
+const Color = ({ color, onClick, active, title, hue }) => (
+  <ColorWrapper color={color} onClick={onClick} active={active} hue={hue}>
+    <span>{title || color}</span>
+    {hue && <span>{hue}</span>}
   </ColorWrapper>
 )
 
 Color.propTypes = {
-  children: PropTypes.string,
   color: PropTypes.string,
   onClick: PropTypes.func,
   active: PropTypes.bool,
+  title: PropTypes.string,
+  hue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
+
 
 export default Color

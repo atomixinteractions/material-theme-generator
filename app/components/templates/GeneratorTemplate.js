@@ -13,19 +13,23 @@ const TemplateWrapper = styled(Column)`
   bottom: 0;
   overflow: hidden;
 `
+TemplateWrapper.displayName = 'TemplateWrapper'
 
 const Picker = styled(Column)`
   flex-grow: 1;
   flex-shrink: 0;
-  width: 50%;
+  max-width: 600px;
 `
+Picker.displayName = 'Picker'
 
 const Preview = styled(Column)`
   flex-grow: 1;
   flex-shrink: 0;
-  width: 50%;
   overflow-y: auto;
+  align-items: center;
+  justify-content: center;
 `
+Preview.displayName = 'Preview'
 
 
 const GeneratorTemplate = ({ header, footer, picker, children }) => (

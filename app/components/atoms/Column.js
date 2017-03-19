@@ -17,6 +17,7 @@ const Column = styled.div`
     }
   `}
 `
+Column.displayName = 'Column'
 
 Column.propTypes = {
   wrap: PropTypes.oneOf(['wrap', 'nowrap', 'initial']),

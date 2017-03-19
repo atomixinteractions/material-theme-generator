@@ -31,13 +31,6 @@ class MuiGeneratorPage extends Component {
     event =>
       this.setState({ muiTheme: themes[name] })
 
-  renderPicker = () => (
-    <Col>
-      <button onClick={this.selectTheme('light')}>Light base theme</button>
-      <button onClick={this.selectTheme('dark')}>Dark base theme</button>
-    </Col>
-  )
-
   render() {
     return (
       <GeneratorTemplate picker={<ThemeSetup presets={presets} onChangePreset={this.selectTheme} />}>

@@ -18,6 +18,7 @@ const Row = styled.div`
     }
   `}
 `
+Row.displayName = 'Row'
 
 Row.propTypes = {
   wrap: PropTypes.oneOf(['wrap', 'nowrap', 'initial']),
