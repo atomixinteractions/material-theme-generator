@@ -19,6 +19,7 @@ const Picker = styled(Column)`
   flex-grow: 1;
   flex-shrink: 0;
   max-width: 600px;
+  overflow-x: auto;
 `
 Picker.displayName = 'Picker'
 

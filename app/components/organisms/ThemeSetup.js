@@ -5,6 +5,7 @@ import Column from '../atoms/Column'
 import Row from '../atoms/Row'
 import Color from '../atoms/Color'
 import ColorBox from '../molecules/ColorBox'
+import HueSelector from '../molecules/HueSelector'
 import ThemePicker from '../organisms/ThemePicker'
 
 
@@ -39,6 +40,9 @@ const ThemeSetup = ({ onChangePreset }) => (
       <ColorBox title="Background" grow={2}>
         <Color color="White" />
       </ColorBox>
+    </Row>
+    <Row marginBetween="L">
+      <HueSelector colorName="Amber" />
     </Row>
   </Column>
 )
