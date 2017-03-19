@@ -35,6 +35,11 @@ const ThemeSetup = ({ onChangePreset }) => (
         <Color color="Pink" hue={900} />
       </ColorBox>
     </Row>
+    <Row marginBetween="L">
+      <ColorBox title="Background" grow={2}>
+        <Color color="White" />
+      </ColorBox>
+    </Row>
   </Column>
 )
 

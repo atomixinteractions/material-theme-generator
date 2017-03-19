@@ -14,8 +14,8 @@ ColorTitle.displayName = 'ColorTitle'
 
 
 
-const ColorBox = ({ title, children }) => (
-  <Column marginBetween="M" grow={1}>
+const ColorBox = ({ title, children, grow }) => (
+  <Column marginBetween="M" grow={grow}>
     {title && <ColorTitle>{title}</ColorTitle>}
     {children}
   </Column>
@@ -24,6 +24,11 @@ const ColorBox = ({ title, children }) => (
 ColorBox.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node.isRequired,
+  grow: PropTypes.number,
+}
+
+ColorBox.defaultProps = {
+  grow: 1,
 }
 
 export default ColorBox
